@@ -1,22 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cnunez-s <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/13 15:02:28 by cnunez-s          #+#    #+#             */
-/*   Updated: 2022/04/13 15:10:42 by cnunez-s         ###   ########.fr       */
+/*   Created: 2022/04/13 15:10:52 by cnunez-s          #+#    #+#             */
+/*   Updated: 2022/04/13 15:23:56 by cnunez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF
-# define FT_PRINTF
+#include "ft_printf.h"
 
-# include <string.h>
-# include <stdio.h>
-# include <stdlib.h>
-
-int	ft_printf(int *, ...);
-
-#endif 
+int	*ft_printf(char const *, ...)
+{
+}
