@@ -1,23 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   c_print.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cnunez-s <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/13 15:02:28 by cnunez-s          #+#    #+#             */
-/*   Updated: 2022/04/19 09:37:59 by cnunez-s         ###   ########.fr       */
+/*   Created: 2022/04/13 15:26:48 by cnunez-s          #+#    #+#             */
+/*   Updated: 2022/04/19 13:06:58 by cnunez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF
-# define FT_PRINTF
+#include "ft_printf.h"
 
-# include <string.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <stdarg.h>
+int	ft_putchar(char c,int fd)
+{
+	int	i;
 
-int	ft_printf(int *, ...);
+	i = 0;
+	i = write(fd, &c, &c);
+	return (i);
+}
 
-#endif 
+int	c_case(va_list ap)
+{
+	int	i;
+	int	c_case;
+
+	i = va_arg(ap, int);
+	c_case = ft_putchar(i, i);
+	return (c_case);
+}
