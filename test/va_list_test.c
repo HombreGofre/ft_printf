@@ -6,27 +6,27 @@
 /*   By: cnunez-s <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 10:58:49 by cnunez-s          #+#    #+#             */
-/*   Updated: 2022/04/19 13:01:09 by cnunez-s         ###   ########.fr       */
+/*   Updated: 2022/04/20 14:06:47 by cnunez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <stdarg.h> /* lib
+#include <stdarg.h> /* lib */
 
 void foo(char *fmt, ...)
 {
    	va_list ap;
 	int d;
-	char c, *s;
+	char c, *a;
 
 	va_start(ap, fmt);   /*inicializate ap value whit fmt */
 	while (*fmt)
 	{
 		switch(*fmt++)
 		{
- 		  case 's':                       /* string */
-    		 s = va_arg(ap, char *);
-    		 printf("string %s\n", s);
+ 		  case 'a':                       /* string */
+    		 a = va_arg(ap, char *);
+    		 printf("string %s\n", a);
     		 break;
    		 case 'd':                       /* int */
     		 d = va_arg(ap, int);
@@ -43,9 +43,9 @@ void foo(char *fmt, ...)
 }
 int main()
 {
-  char s[20] = "Hello World";
+  char a[20] = "Hello World";
   int c = 98;
   int d = 100;
-  char fmt[4] = "sdc\0"; /*when we creat our string we need to put 0 at the aend */
-  foo(fmt, s, d, c);
+  char fmt[4] = "adc\0"; /*when we creat our string we need to put 0 at the aend */
+  foo(fmt, a, d, c);
 }
