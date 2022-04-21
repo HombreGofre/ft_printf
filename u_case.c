@@ -1,41 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   s_case.c                                           :+:      :+:    :+:   */
+/*   u_case.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cnunez-s <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/19 13:42:25 by cnunez-s          #+#    #+#             */
-/*   Updated: 2022/04/21 14:11:14 by cnunez-s         ###   ########.fr       */
+/*   Created: 2022/04/21 12:34:03 by cnunez-s          #+#    #+#             */
+/*   Updated: 2022/04/21 12:43:45 by cnunez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_prinft.h"
+#include "ft_printf.h"
 
-int	*ft_putstr(char *str, int fd)
+void	ft_u_decimal(unsigned int nbr, int fd)
 {
-	int		i;
-	int		str;
-
-	if (!s)
+	if (nbr < 0)
+		return (NULL);
+	if (nbr >= 10)
 	{
-		str += write(fd, "(NULL)", 6);
-		return (str);
+		ft_u_decimal(nbr / 10, fd);
+		ft_u_decimal(nbr % 10, fd)
 	}
-	while (s[i])
+	else
 	{
-		str += write(fd, &s[i], 1);
-		i++;
+		nbr = nbr + 48;
+		write (fd, &nbr, 1);
 	}
-	return (str);
 }
 
-int	s_case(va_list ap)
+int	u_case(va_list ap)
 {
-	char	*str;
-	int	s_case;
+	unsigned int	u;
 
-	str = va_arg(ap, char *);
-	s_case = ft_putstr(str, 1);
-	return (s_case);
+	u = va_arg(ap, unsigned int);
+	ft_u_decimal(u, 1);
+	return (u);
 }

@@ -6,7 +6,7 @@
 /*   By: cnunez-s <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 09:56:02 by cnunez-s          #+#    #+#             */
-/*   Updated: 2022/04/21 12:02:40 by cnunez-s         ###   ########.fr       */
+/*   Updated: 2022/04/21 12:44:07 by cnunez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,5 @@ int	d_i_case(va_list ap)
 
 	nbr = va_arg(ap, int);
 	ft_id_decimal(nbr, 1);
+	return (nbr);
 }

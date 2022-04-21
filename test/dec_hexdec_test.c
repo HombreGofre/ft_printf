@@ -6,7 +6,7 @@
 /*   By: cnunez-s <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 10:39:31 by cnunez-s          #+#    #+#             */
-/*   Updated: 2022/04/20 11:44:03 by cnunez-s         ###   ########.fr       */
+/*   Updated: 2022/04/21 14:21:35 by cnunez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,13 @@ void	ft_hexa(unsigned long int nbr, char *base, int *num)
 	if (nbr > 0)
 	{
 		ft_hexa(nbr / i, base, num);
-		c = nbr % i;
-		num += write(1, &base[c], 1);
 	}
+	c = nbr % i;
+	num += write(1, &base[c], 1);
 }
 int main()
 {
-	int num;
+	/*int num;
 	unsigned long int p;
 
 	p = 8634;
@@ -40,8 +40,8 @@ int main()
 	if (num == 0)
 		num += write(1, "0x", 2);
 	if (p == 0)
-		num += write(1, "0", 1);
-	ft_hexa(p, HEXADECIMAL, &num);
-	printf("\n%p", p);
-	return (num);
+		num += write(1, "0", 1);*/
+	ft_hexa((unsigned int)684651, HEXADECIMAL, 0);
+	printf("\n%p", 684651);
+	//return (num);
 }
