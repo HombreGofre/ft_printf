@@ -1,38 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   u_case.c                                           :+:      :+:    :+:   */
+/*   x_X_hexdec_test.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cnunez-s <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/21 12:34:03 by cnunez-s          #+#    #+#             */
-/*   Updated: 2022/04/22 16:05:05 by cnunez-s         ###   ########.fr       */
+/*   Created: 2022/04/22 16:20:43 by cnunez-s          #+#    #+#             */
+/*   Updated: 2022/04/22 16:23:03 by cnunez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include <stdio.h>
+#include <unistd.h>
 
-void	ft_u_decimal(unsigned int nbr, int fd)
+int main()
 {
-	if (nbr < 0)
-		return (NULL);
-	if (nbr >= 10)
-	{
-		ft_u_decimal(nbr / 10, fd);
-		ft_u_decimal(nbr % 10, fd);
-	}
-	else
-	{
-		nbr = nbr + 48;
-		write (fd, &nbr, 1);
-	}
-}
+	int i;
+	int j;
 
-int	u_case(va_list ap)
-{
-	unsigned int	u;
+	i = 2847982;
+	j = 2847982;
 
-	u = va_arg(ap, unsigned int);
-	ft_u_decimal(u, 1);
-	return (u);
+	printf("Hexadecimal en minusculas ---> %x\n", i);
+	printf("Hexadecimal en mayusculas ---> %X", j);
 }

@@ -6,7 +6,7 @@
 /*   By: cnunez-s <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 15:10:52 by cnunez-s          #+#    #+#             */
-/*   Updated: 2022/04/21 14:06:46 by cnunez-s         ###   ########.fr       */
+/*   Updated: 2022/04/22 16:40:29 by cnunez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,7 @@ int	dif_cases(char *format, va_list ap)
 		cnt = d_i_case(ap);
 	else if (format[*cs] = 'p')
 		cnt = p_case(ap);
-	else if ()
+	else if (format[*cs] == 'u')
+		cnt = u_case(ap);
+	else if 
 }
