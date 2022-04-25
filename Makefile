@@ -5,34 +5,26 @@
 #                                                     +:+ +:+         +:+      #
 #    By: cnunez-s <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/04/13 14:54:16 by cnunez-s          #+#    #+#              #
-#    Updated: 2022/04/22 19:45:08 by cnunez-s         ###   ########.fr        #
+#    Created: 2022/04/25 11:44:34 by cnunez-s          #+#    #+#              #
+#    Updated: 2022/04/25 14:00:36 by cnunez-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-NAME	= libftprintf.a
-SRCS	= ft_print.c	\
-		  c_case.c		\
-		  s_case.c		\
-		  p_case.c		\
-		  x_X_case.c	\
-		  d_i_case.c	\
-		  u_case.c		\
-OBJS	= $(SRCS:.c=.o)
-CC		= gcc
-CFLAGS	= -Wall -Werror -Wextra
-RM		= rm -f
 
-all: $(NAME)
+SRCS	= ft_printf.c c_case.c s_case.c d_i_case.c p_case.c u_case.c x_X_case.c
+OBJS	=	${SRCS:.c=.o}
+NAME	=	libftprintf.a
+CC			=	gcc
+AR			=	ar rc
+CFLAGS	=	-Wall -Werror -Wextra
+.c.o:
+		${CC} ${CFLAGS} -c ${SRCS}
+all:	${NAME}
+$(NAME):	${OBJS}
+	${AR} ${NAME} ${OBJS}
 
-$(NAME) : $(OBJS)
-	$(NAME) $()
 clean:
-	$(RM) $(OBJS)
-
-fclean:	clean
-	$(RM) $(NAME)
-re:	fclean all
-	
-	fclean:	clean
-	$(RM) $(NAME)
-re:	fclean all
+		${RM} ${OBJS}
+fclean:
+		${RM} ${NAME}
+re:		fclean clean
+.PHONY: all clean fclean re

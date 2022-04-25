@@ -6,7 +6,7 @@
 /*   By: cnunez-s <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 16:46:08 by cnunez-s          #+#    #+#             */
-/*   Updated: 2022/04/22 18:44:03 by cnunez-s         ###   ########.fr       */
+/*   Updated: 2022/04/25 13:49:30 by cnunez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,29 +19,29 @@ void	ft_x_hexdec(unsigned long int num, char *base, int *hex)
 
 	i = ft_strlen(base);
 	if (num > 0)
-		ft_x_hexdec(nbr / i, base);
-	j = nbr % i;
+		ft_x_hexdec(num / i, base, hex);
+	j = num % i;
 	hex += write(1, &base[j], 1);
 }
 
 int	x_case(va_list ap)
 {
-	int	*nbr;
-	unsigned long int x;
+	int					*nbr;
+	unsigned long int	x;
 
 	nbr = 0;
 	x = va_arg(ap, unsigned int);
 	ft_x_hexdec(x, "0123456789abcdef", nbr);
-	return (nbr);
+	return (*nbr);
 }
 
-int	X_case(va_list ap);
+int	X_case(va_list ap)
 {
-	int *nbr;
-	unsigned long int x;
+	int					*nbr;
+	unsigned long int	x;
 
 	nbr = 0;
 	x = va_arg(ap, unsigned int);
 	ft_x_hexdec(x, "013456789ABCDEF", nbr);
-	return (nbr);
+	return (*nbr);
 }

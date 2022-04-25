@@ -6,34 +6,36 @@
 /*   By: cnunez-s <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 13:42:25 by cnunez-s          #+#    #+#             */
-/*   Updated: 2022/04/21 14:11:14 by cnunez-s         ###   ########.fr       */
+/*   Updated: 2022/04/25 12:57:47 by cnunez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_prinft.h"
+#include "ft_printf.h"
 
-int	*ft_putstr(char *str, int fd)
+int	ft_putstr(char *str, int fd)
 {
 	int		i;
-	int		str;
+	int		s;
 
-	if (!s)
+	s = 0;
+	i = 0;
+	if (!str)
 	{
-		str += write(fd, "(NULL)", 6);
-		return (str);
+		s += write(fd, "(NULL)", 6);
+		return (s);
 	}
-	while (s[i])
+	while (str[i])
 	{
-		str += write(fd, &s[i], 1);
+		s += write(fd, &str[i], 1);
 		i++;
 	}
-	return (str);
+	return (s);
 }
 
 int	s_case(va_list ap)
 {
 	char	*str;
-	int	s_case;
+	int		s_case;
 
 	str = va_arg(ap, char *);
 	s_case = ft_putstr(str, 1);

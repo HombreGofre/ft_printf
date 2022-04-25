@@ -6,7 +6,7 @@
 /*   By: cnunez-s <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 12:34:03 by cnunez-s          #+#    #+#             */
-/*   Updated: 2022/04/22 16:05:05 by cnunez-s         ###   ########.fr       */
+/*   Updated: 2022/04/25 13:10:02 by cnunez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 void	ft_u_decimal(unsigned int nbr, int fd)
 {
-	if (nbr < 0)
-		return (NULL);
 	if (nbr >= 10)
 	{
 		ft_u_decimal(nbr / 10, fd);
