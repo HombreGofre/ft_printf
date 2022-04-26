@@ -6,7 +6,7 @@
 /*   By: cnunez-s <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 15:02:28 by cnunez-s          #+#    #+#             */
-/*   Updated: 2022/04/25 14:17:13 by cnunez-s         ###   ########.fr       */
+/*   Updated: 2022/04/26 14:28:55 by cnunez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdlib.h>
 # include <stdarg.h>
 # include <stdio.h> //to debug
+# include <limits.h>
 
 int		ft_printf(char const *format, ...);
 
@@ -26,9 +27,9 @@ int		ft_putstr(char *s, int fd);
 size_t	ft_strlen(char *s);
 char	*ft_strdup(const char *s);
 void	ft_pointer(unsigned long int nbr, char *base, int *hex);
-void	ft_id_decimal(int nbr, int fd);
-void	ft_u_decimal(unsigned int nbr, int fd);
-void	ft_x_hexdec(unsigned long int num, char *base, int *hex);
+void	ft_id_decimal(int nbr, int fd, int *dec);
+void	ft_u_decimal(unsigned int nbr, int fd, unsigned int *udec);
+void	ft_x_hexdec(unsigned int num, char *base, int *hex);
 
 int		c_case(va_list ap); //va_arg to ft_printf function
 int		s_case(va_list ap);

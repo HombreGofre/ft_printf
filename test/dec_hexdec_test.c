@@ -6,12 +6,13 @@
 /*   By: cnunez-s <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 10:39:31 by cnunez-s          #+#    #+#             */
-/*   Updated: 2022/04/21 14:21:35 by cnunez-s         ###   ########.fr       */
+/*   Updated: 2022/04/26 11:51:57 by cnunez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <unistd.h>
+#include <limits.h>
 
 #ifndef HEXADECIMAL
 # define HEXADECIMAL "0123456789abcdef"
@@ -23,7 +24,7 @@ void	ft_hexa(unsigned long int nbr, char *base, int *num)
 	unsigned long int c;
 
 	i = strlen(base);
-	if (nbr > 0)
+	if (nbr >= 16)
 	{
 		ft_hexa(nbr / i, base, num);
 	}
@@ -32,16 +33,17 @@ void	ft_hexa(unsigned long int nbr, char *base, int *num)
 }
 int main()
 {
-	/*int num;
-	unsigned long int p;
+	int num;
+	double p;
+	unsigned long int p2;
 
-	p = 8634;
+	p = LONG_MAX;
+	p2 = LONG_MIN;
 	num = 0;
 	if (num == 0)
 		num += write(1, "0x", 2);
-	if (p == 0)
-		num += write(1, "0", 1);*/
-	ft_hexa((unsigned int)684651, HEXADECIMAL, 0);
-	printf("\n%p", 684651);
-	//return (num);
+	ft_hexa(p, HEXADECIMAL, 0);
+	printf("\n%p", p);
+	printf("\n%u", sizeof(long));
+	return (num);
 }

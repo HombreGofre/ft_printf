@@ -6,35 +6,32 @@
 /*   By: cnunez-s <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 09:56:02 by cnunez-s          #+#    #+#             */
-/*   Updated: 2022/04/25 13:00:17 by cnunez-s         ###   ########.fr       */
+/*   Updated: 2022/04/26 13:16:28 by cnunez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_id_decimal(int nbr, int fd)
+void	ft_id_decimal( int nbr, int fd, int *dec)
 {
-	int num;
-
-	num = 0;
 	if (nbr == -2147483648)
-		write(1, "-2147483648", 11);
+		*dec = write(1, "-2147483648", 11);
 	if (nbr != -2147483648)
 	{
 		if (nbr < 0)
 		{
-			num += write(1, "-", 1);
+			*dec += write(1, "-", 1);
 			nbr = -nbr;
 		}
 		if (nbr >= 10 && nbr != -2147483648)
 		{
-			ft_id_decimal(nbr / 10, fd);
-			ft_id_decimal(nbr % 10, fd);
+			ft_id_decimal(nbr / 10, fd, dec);
+			ft_id_decimal(nbr % 10, fd, dec);
 		}
 		else
 		{
 			nbr = nbr + 48;
-			write (fd, &nbr, 1);
+			*dec += write (fd, &nbr, 1);
 		
 		}
 	}
@@ -43,8 +40,10 @@ void	ft_id_decimal(int nbr, int fd)
 int	d_i_case(va_list ap)
 {
 	int	nbr;
+	int dec;
 
+	dec = 0;
 	nbr = va_arg(ap, int);
-	ft_id_decimal(nbr, 1);
-	return (nbr);
+	ft_id_decimal(nbr, 1, &dec);
+	return (dec);
 }

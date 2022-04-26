@@ -6,7 +6,7 @@
 /*   By: cnunez-s <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 15:10:52 by cnunez-s          #+#    #+#             */
-/*   Updated: 2022/04/25 14:17:29 by cnunez-s         ###   ########.fr       */
+/*   Updated: 2022/04/26 13:09:27 by cnunez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int dif_cases(char const *format, va_list ap, int *cs)
         prnt = c_case(ap);
     else if (format[*cs] == 's')
         prnt = s_case(ap);
-    else if (format[*cs] == 'd' && format[*cs] == 'i')
+    else if (format[*cs] == 'd' || format[*cs] == 'i')
         prnt = d_i_case(ap);
     else if (format[*cs] == 'p')
         prnt = p_case(ap);
@@ -33,6 +33,8 @@ int dif_cases(char const *format, va_list ap, int *cs)
         prnt = x_case(ap);
     else if (format[*cs] == 'X')
         prnt = X_case(ap);
+	else if (format[*cs] == '%')
+		prnt += write(1, "%", 1);
     free(aux);
     return (prnt);
 }

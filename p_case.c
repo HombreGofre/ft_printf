@@ -6,7 +6,7 @@
 /*   By: cnunez-s <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 11:44:53 by cnunez-s          #+#    #+#             */
-/*   Updated: 2022/04/25 13:07:56 by cnunez-s         ###   ########.fr       */
+/*   Updated: 2022/04/26 11:41:28 by cnunez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,24 +22,24 @@ void ft_pointer(unsigned long int nbr, char *base, int *hex)
 	unsigned long int	j;
 
 	i = ft_strlen(base);
-	if (nbr > 0)
+	if (nbr >= i)
 	{
 		ft_pointer(nbr / i, base, hex);
 	}
 	j = nbr % i;
-	hex += write(1, &base[j], 1);
+	*hex += write(1, &base[j], 1);
 }
 
 int	p_case(va_list ap)
 {
-	int 				*nbr;
+	int 				nbr;
 	unsigned long int	bse;
 
-	bse = va_arg(ap, unsigned int);
+	bse = va_arg(ap, unsigned long int);
 	nbr = 0;
 	nbr += write(1, "0x", 2);
-	ft_pointer(bse, HEXADECIMAL, nbr);
-	return (*nbr);
+	ft_pointer(bse, HEXADECIMAL, &nbr);
+	return (nbr);
 }
 
 size_t	ft_strlen(char *s)
