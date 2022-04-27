@@ -6,37 +6,37 @@
 /*   By: cnunez-s <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 15:10:52 by cnunez-s          #+#    #+#             */
-/*   Updated: 2022/04/26 13:09:27 by cnunez-s         ###   ########.fr       */
+/*   Updated: 2022/04/27 11:27:52 by cnunez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int dif_cases(char const *format, va_list ap, int *cs)
+int	dif_cases(char const *format, va_list ap, int *cs)
 {
-    int		prnt;
-    char	*aux;
+	int		prnt;
+	char	*aux;
 
-    prnt = 0;
-    aux = ft_strdup(format);
-    if (format[*cs] == 'c')
-        prnt = c_case(ap);
-    else if (format[*cs] == 's')
-        prnt = s_case(ap);
-    else if (format[*cs] == 'd' || format[*cs] == 'i')
-        prnt = d_i_case(ap);
-    else if (format[*cs] == 'p')
-        prnt = p_case(ap);
-    else if (format[*cs] == 'u')
-        prnt = u_case(ap);
-    else if (format[*cs] == 'x')
-        prnt = x_case(ap);
-    else if (format[*cs] == 'X')
-        prnt = X_case(ap);
+	prnt = 0;
+	aux = ft_strdup(format);
+	if (format[*cs] == 'c')
+		prnt = c_case(ap);
+	else if (format[*cs] == 's')
+		prnt = s_case(ap);
+	else if (format[*cs] == 'd' || format[*cs] == 'i')
+		prnt = d_i_case(ap);
+	else if (format[*cs] == 'p')
+		prnt = p_case(ap);
+	else if (format[*cs] == 'u')
+		prnt = u_case(ap);
+	else if (format[*cs] == 'x')
+		prnt = x_case(ap);
+	else if (format[*cs] == 'X')
+		prnt = up_x_case(ap);
 	else if (format[*cs] == '%')
 		prnt += write(1, "%", 1);
-    free(aux);
-    return (prnt);
+	free(aux);
+	return (prnt);
 }
 
 int	ft_printf(char const *format, ...)

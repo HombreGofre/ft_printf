@@ -6,7 +6,7 @@
 /*   By: cnunez-s <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 11:44:53 by cnunez-s          #+#    #+#             */
-/*   Updated: 2022/04/26 11:41:28 by cnunez-s         ###   ########.fr       */
+/*   Updated: 2022/04/27 11:23:37 by cnunez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # define HEXADECIMAL "0123456789abcdef"
 #endif
 
-void ft_pointer(unsigned long int nbr, char *base, int *hex)
+void	ft_pointer(unsigned long int nbr, char *base, int *hex)
 {
 	unsigned long int	i;
 	unsigned long int	j;
@@ -32,7 +32,7 @@ void ft_pointer(unsigned long int nbr, char *base, int *hex)
 
 int	p_case(va_list ap)
 {
-	int 				nbr;
+	int					nbr;
 	unsigned long int	bse;
 
 	bse = va_arg(ap, unsigned long int);
@@ -44,12 +44,12 @@ int	p_case(va_list ap)
 
 size_t	ft_strlen(char *s)
 {
-	size_t i;
+	size_t	i;
 
 	if (s == NULL)
 		return (0);
 	i = 0;
-	while(s[i])
-		 i++;
+	while (s[i])
+		i++;
 	return (i);
 }

@@ -6,13 +6,13 @@
 /*   By: cnunez-s <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 15:26:48 by cnunez-s          #+#    #+#             */
-/*   Updated: 2022/04/25 14:05:14 by cnunez-s         ###   ########.fr       */
+/*   Updated: 2022/04/27 11:16:34 by cnunez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putchar(char c,int fd)
+int	ft_putchar(char c, int fd)
 {
 	int	i;
 

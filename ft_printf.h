@@ -6,7 +6,7 @@
 /*   By: cnunez-s <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 15:02:28 by cnunez-s          #+#    #+#             */
-/*   Updated: 2022/04/26 14:28:55 by cnunez-s         ###   ########.fr       */
+/*   Updated: 2022/04/27 11:27:19 by cnunez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int		p_case(va_list ap);
 int		d_i_case(va_list ap);
 int		u_case(va_list ap);
 int		x_case(va_list ap);
-int		X_case(va_list ap);
+int		up_x_case(va_list ap);
 int		dif_cases(char const *format, va_list ap, int *cs);
 
 #endif 

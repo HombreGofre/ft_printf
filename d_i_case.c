@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   d_i_case.c                                           :+:      :+:    :+:   */
+/*   d_i_case.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cnunez-s <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/21 09:56:02 by cnunez-s          #+#    #+#             */
-/*   Updated: 2022/04/26 13:16:28 by cnunez-s         ###   ########.fr       */
+/*   Created: 2022/04/27 11:17:21 by cnunez-s          #+#    #+#             */
+/*   Updated: 2022/04/27 11:19:02 by cnunez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,7 @@ void	ft_id_decimal( int nbr, int fd, int *dec)
 		else
 		{
 			nbr = nbr + 48;
-			*dec += write (fd, &nbr, 1);
-		
+			*dec += write(fd, &nbr, 1);
 		}
 	}
 }
@@ -40,7 +39,7 @@ void	ft_id_decimal( int nbr, int fd, int *dec)
 int	d_i_case(va_list ap)
 {
 	int	nbr;
-	int dec;
+	int	dec;
 
 	dec = 0;
 	nbr = va_arg(ap, int);
