@@ -6,7 +6,7 @@
 /*   By: cnunez-s <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 10:39:31 by cnunez-s          #+#    #+#             */
-/*   Updated: 2022/04/26 11:51:57 by cnunez-s         ###   ########.fr       */
+/*   Updated: 2022/04/28 18:58:10 by cnunez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,10 @@ void	ft_hexa(unsigned long int nbr, char *base, int *num)
 int main()
 {
 	int num;
-	double p;
+	int	p;
 	unsigned long int p2;
 
-	p = LONG_MAX;
+	p = 546816;
 	p2 = LONG_MIN;
 	num = 0;
 	if (num == 0)

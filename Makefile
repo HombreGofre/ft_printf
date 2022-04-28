@@ -6,7 +6,7 @@
 #    By: cnunez-s <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/26 14:40:26 by cnunez-s          #+#    #+#              #
-#    Updated: 2022/04/26 14:40:30 by cnunez-s         ###   ########.fr        #
+#    Updated: 2022/04/27 15:25:27 by cnunez-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,15 +16,21 @@ NAME	=	libftprintf.a
 CC			=	gcc
 AR			=	ar rc
 CFLAGS	=	-Wall -Werror -Wextra
+
 .c.o:
 		${CC} ${CFLAGS} -c ${SRCS}
+
 all:	${NAME}
+
 $(NAME):	${OBJS}
 	${AR} ${NAME} ${OBJS}
 
 clean:
 		${RM} ${OBJS}
-fclean:
+
+fclean: clean
 		${RM} ${NAME}
-re:		fclean clean
+
+re:		fclean all
+
 .PHONY: all clean fclean re

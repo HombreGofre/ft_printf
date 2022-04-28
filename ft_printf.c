@@ -6,7 +6,7 @@
 /*   By: cnunez-s <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 15:10:52 by cnunez-s          #+#    #+#             */
-/*   Updated: 2022/04/27 11:27:52 by cnunez-s         ###   ########.fr       */
+/*   Updated: 2022/04/28 15:33:30 by cnunez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,8 @@
 int	dif_cases(char const *format, va_list ap, int *cs)
 {
 	int		prnt;
-	char	*aux;
 
 	prnt = 0;
-	aux = ft_strdup(format);
 	if (format[*cs] == 'c')
 		prnt = c_case(ap);
 	else if (format[*cs] == 's')
@@ -35,7 +33,6 @@ int	dif_cases(char const *format, va_list ap, int *cs)
 		prnt = up_x_case(ap);
 	else if (format[*cs] == '%')
 		prnt += write(1, "%", 1);
-	free(aux);
 	return (prnt);
 }
 
@@ -61,22 +58,4 @@ int	ft_printf(char const *format, ...)
 	}
 	return (aux);
 	va_end(ap);
-}
-
-char	*ft_strdup(const char *s1)
-{
-	char	*str;
-	size_t	i;
-
-	i = 0;
-	str = malloc(ft_strlen((char *)s1) + 1);
-	if (!s1 || !str)
-		return (NULL);
-	while (s1[i])
-	{
-		str[i] = s1[i];
-		i++;
-	}
-	str[i] = 0;
-	return (str);
 }
